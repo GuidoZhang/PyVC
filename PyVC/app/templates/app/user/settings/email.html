@@ -1,0 +1,62 @@
+﻿{% include "../../base/head.html" %}
+<div class="user settings emails">
+	<div class="ui container">
+		<div class="ui grid">
+			{% include "../settings/navbar.html" %}
+			<div class="twelve wide column content">
+				{% include "../../base/alert.html" %}
+				<h4 class="ui top attached header">
+					管理邮箱地址
+				</h4>
+				<div class="ui attached segment">
+					<div class="ui email list">
+						<div class="item">
+							您的主要邮箱地址奖杯用于通知提醒和其它操作
+						</div>
+							<div class="item ui grid">
+								<div class="column">
+									<strong></strong>
+									<span class="ui green tiny primary label">主要</span>
+										<div class="ui right">
+											<button class="ui red tiny basic button delete-button" data-url="/delete" data-id="">
+												删除邮箱
+											</button>
+										</div>
+											<div class="right floated">
+												<form action="" method="post">
+													<input name="_method" type="hidden" value="PRIMARY">
+													<input name="id" type="hidden" value="">
+													<button class="ui green tiny basic button">主要邮箱</button>
+												</form>
+											</div>
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="ui attached bottom segment">
+					<form class="ui form" action="" method="post">
+						<div class="required field ">
+							<label for="email">添加新的邮箱</label>
+							<input id="email" name="email" type="email" autofocus required>
+						</div>
+						<button class="ui green button">
+							添加邮箱
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui small basic delete modal">
+	<div class="ui icon header">
+		<i class="trash icon"></i>
+		删除邮箱
+	</div>
+	<div class="content">
+		<p></p>
+	</div>
+	{% include "../../base/delete_modal_actions.html" %}
+</div>
+{% include "../../base/footer.html" %}
