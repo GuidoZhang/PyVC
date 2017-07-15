@@ -59,13 +59,13 @@
 									<img class="ui mini image" src="{% static 'app/img/favicon.png' %}">
 								</a>
                             {% if user.is_active and user.is_staff %}
-									<a class="item active" href="/">dashboard</a>
+									<a class="item active" href="/">驾驶舱</a>
                             {% endif %}
-									<a class="item" href="/issues">issues</a>
-									<a class="item" href="/pulls">pull_requests</a>
-									<a class="item" href="/">home</a>
+									<a class="item" href="/issues">工单管理</a>
+									<a class="item" href="/pulls">合并请求</a>
+									<a class="item" href="/">首页</a>
 
-								<a class="item" href="/explore/repos">explore</a>
+								<a class="item" href="/explore/repos">探索</a>
 								<div class="item">
 									<div class="ui icon input">
 									<input class="searchbox" type="text" placeholder="search_project">
@@ -81,13 +81,13 @@
 											</span>
 											<div class="menu">
 												<a class="item" href="/repo/create">
-													<i class="octicon octicon-plus"></i> new_repo
+													<i class="octicon octicon-plus"></i> 创建新的仓库
 												</a>
 												<a class="item" href="/repo/migrate">
-													<i class="octicon octicon-repo-clone"></i> new_migrate
+													<i class="octicon octicon-repo-clone"></i> 迁移外部仓库
 												</a>
 												<a class="item" href="/org/create">
-													<i class="octicon octicon-organization"></i> new_org
+													<i class="octicon octicon-organization"></i> 创建新的组织
 												</a>
 											</div><!-- end content create new menu -->
 										</div><!-- end dropdown menu create new -->
@@ -95,26 +95,26 @@
 										<div class="ui dropdown head link jump item poping up" tabindex="-1" data-content="user_profile_and_more" data-variation="tiny inverted">
 											<span class="text avatar">
 												<img class="ui small rounded image" src="">
-												<span class="sr-only">user_profile_and_more</span>
+												<span class="sr-only">用户信息及更多</span>
 												<i class="octicon octicon-triangle-down" tabindex="-1"></i>
 											</span>
 											<div class="menu" tabindex="-1">
 												<div class="ui header">
-													signed_in_as {{user.get_username}}<strong></strong>
+													已登录用户 {{user.get_username}}<strong></strong>
 												</div>
 
 												<div class="divider"></div>
 												<a class="item" href="/profile">
 													<i class="octicon octicon-person"></i>
-													your_profile<!-- Your profile -->
+													个人信息<!-- Your profile -->
 												</a>
 												<a class=" item" href="/user/settings">
 													<i class="octicon octicon-settings"></i>
-													your_settings<!-- Your settings -->
+													设置<!-- Your settings -->
 												</a>
 												<a class="item" target="_blank" href="https://gogs.io/docs" rel="noreferrer">
 													<i class="octicon octicon-question"></i>
-													help<!-- Help -->
+													帮助<!-- Help -->
 												</a>
 													<div class="divider"></div>
 

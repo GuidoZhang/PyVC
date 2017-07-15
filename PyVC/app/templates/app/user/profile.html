@@ -1,4 +1,4 @@
-{% include '../base/head.html' %}
+﻿{% include '../base/head.html' %}
 <div class="user settings profile">
 	<div class="ui container">
 		<div class="ui grid">
@@ -6,35 +6,35 @@
 			<div class="twelve wide column content">
 				{% include "../base/alert.html" %}
 				<h4 class="ui top attached header">
-					settings.public_profile
+					公开信息
 				</h4>
 				<div class="ui attached segment">
-					<p>settings.profile_desc</p>
+					<p>您的邮箱地址将会被公开，并被用于接收帐户的所有提醒和通知。</p>
 					<form class="ui form" action="" method="post">{% csrf_token %}
 						<div class="required field">
-							<label for="username">username<span class="text red hide" id="name-change-prompt"> settings.change_username_prompt</span></label>
+							<label for="username">用户名<span class="text red hide" id="name-change-prompt"> settings.change_username_prompt</span></label>
 							<input id="username" name="name" value="{{user.username}}" data-name="" autofocus required readonly>
 							<p class="help text blue">settings.password_username_disabled</p>
 						</div>
 						<div class="field">
-							<label for="full_name">settings.full_name</label>
+							<label for="full_name">自定义名称</label>
 							<input id="full_name" name="full_name" value="{{user.firstname}}">
 						</div>
 						<div class="required field">
-							<label for="email">email</label>
+							<label for="email">邮箱</label>
 							<input id="email" name="email" value="{{user.email}}" required>
 						</div>
 						<div class="field">
-							<label for="website">settings.website</label>
+							<label for="website">个人网站</label>
 							<input id="website" name="website" type="url" value="">
 						</div>
 						<div class="field">
-							<label for="location">settings.location</label>
+							<label for="location">所在地区</label>
 							<input id="location" name="location"  value="">
 						</div>
 
 						<div class="field">
-							<button class="ui green button">settings.update_profile</button>
+							<button class="ui green button">更新信息</button>
 						</div>
 					</form>
 				</div>

@@ -42,6 +42,7 @@ def modify_password(request):
 @login_required
 def modify_password_post(request):
     assert isinstance(request, HttpRequest)
+    msg = ""
     if request.method == 'POST':
         old_password = request.POST.get('old_password')
         password = request.POST.get('password')
@@ -50,10 +51,16 @@ def modify_password_post(request):
         if request.user.is_active and result and str(password) == str(retype):
             request.user.set_password(retype)
             request.user.save()
+            msg = "密码修改成功！"
+        elif result and str(password) != str(retype):
+            msg = "新密码输入不一致！"
+        else:
+            msg = "密码修改失败"
 
     return render(
         request,
         'app/user/settings/password.html',
+        { "msg" : msg },
         )
 
 def contact(request):
