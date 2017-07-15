@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	{% load staticfiles %}
+		<meta name="author" content="Gogs" />
+		<meta name="description" content="-Gogs is a painless self-hosted Git service" />
+		<meta name="keywords" content="go, git, self-hosted, gogs">
+	<meta name="referrer" content="no-referrer" />
+	<meta name="_csrf" content="" />
+	<meta name="_suburl" content="" />
+	
+	<!-- Open Graph Tags -->
+		<meta property="og:description" content="Gogs is a painless self-hosted Git service.">
+		<meta property="og:image" content="{% static 'app/img/gogs-lg.png' %}" />
+
+	<link rel="shortcut icon" href="{% static 'app/img/favicon.png' %}" />
+
+	<script src="{% static 'app/js/jquery-1.11.3.min.js' %}"></script>
+	<script src="{% static 'app/js/libs/jquery.are-you-sure.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'app/assets/font-awesome-4.6.3/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'app/assets/octicons-4.3.0/octicons.min.css' %}">
+
+	<!-- notebook.js for rendering ipython notebooks and marked.js for rendering markdown in notebooks -->
+
+		<script src="{% static 'app/plugins/notebookjs-0.2.6/notebook.min.js' %}"></script>
+		<script src="{% static 'app/plugins/marked-0.3.6/marked.min.js' %}"></script>
+
+		<link rel="stylesheet" href="{% static 'app/plugins/simplemde-1.10.1/simplemde.min.css' %}">
+		<script src="{% static 'app/plugins/simplemde-1.10.1/simplemde.min.js' %}"></script>
+		<script src="{% static 'app/plugins/codemirror-5.17.0/addon/mode/loadmode.js' %}"></script>
+		<script src="{% static 'app/plugins/codemirror-5.17.0/mode/meta.js' %}"></script>
+		<script>
+			CodeMirror.modeURL =  "{% static 'app/plugins/codemirror-5.17.0/mode/%N/%N.js' %}";
+		</script>
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="{% static 'app/css/semantic-2.2.10.min.css' %}">
+	<link rel="stylesheet" href="{% static 'app/css/gogs.css' %}">
+
+	<!-- JavaScript -->
+	<script src="{% static 'app/js/semantic-2.2.10.min.js' %}"></script>
+	<script src="{% static 'app/js/gogs.js' %}"></script>
+
+	<title> PyGogs - Version Control </title>
+
+	<meta name="theme-color" content="">
+
+</head>
+<body>
+	<div class="full height">
+		<noscript>Please enable JavaScript in your browser!</noscript>
+
+			<div class="following bar light">
+				<div class="ui container">
+					<div class="ui grid">
+						<div class="column">
+							<div class="ui top secondary menu">
+								<a class="item brand" href="/">
+									<img class="ui mini image" src="{% static 'app/img/favicon.png' %}">
+								</a>
+                            {% if user.is_active and user.is_staff %}
+									<a class="item active" href="/">dashboard</a>
+                            {% endif %}
+									<a class="item" href="/issues">issues</a>
+									<a class="item" href="/pulls">pull_requests</a>
+									<a class="item" href="/">home</a>
+
+								<a class="item" href="/explore/repos">explore</a>
+								<div class="item">
+									<div class="ui icon input">
+									<input class="searchbox" type="text" placeholder="search_project">
+									<i class="search icon"></i>
+									</div>
+									</div>
+
+									<div class="right menu">
+										<div class="ui dropdown head link jump item poping up" data-content="create_new" data-variation="tiny inverted">
+											<span class="text">
+												<i class="octicon octicon-plus"><span class="sr-only">create_new</span></i>
+												<i class="octicon octicon-triangle-down"></i>
+											</span>
+											<div class="menu">
+												<a class="item" href="/repo/create">
+													<i class="octicon octicon-plus"></i> new_repo
+												</a>
+												<a class="item" href="/repo/migrate">
+													<i class="octicon octicon-repo-clone"></i> new_migrate
+												</a>
+												<a class="item" href="/org/create">
+													<i class="octicon octicon-organization"></i> new_org
+												</a>
+											</div><!-- end content create new menu -->
+										</div><!-- end dropdown menu create new -->
+
+										<div class="ui dropdown head link jump item poping up" tabindex="-1" data-content="user_profile_and_more" data-variation="tiny inverted">
+											<span class="text avatar">
+												<img class="ui small rounded image" src="">
+												<span class="sr-only">user_profile_and_more</span>
+												<i class="octicon octicon-triangle-down" tabindex="-1"></i>
+											</span>
+											<div class="menu" tabindex="-1">
+												<div class="ui header">
+													signed_in_as {{user.get_username}}<strong></strong>
+												</div>
+
+												<div class="divider"></div>
+												<a class="item" href="/profile">
+													<i class="octicon octicon-person"></i>
+													your_profile<!-- Your profile -->
+												</a>
+												<a class=" item" href="/user/settings">
+													<i class="octicon octicon-settings"></i>
+													your_settings<!-- Your settings -->
+												</a>
+												<a class="item" target="_blank" href="https://gogs.io/docs" rel="noreferrer">
+													<i class="octicon octicon-question"></i>
+													help<!-- Help -->
+												</a>
+													<div class="divider"></div>
+
+													<a class="item" href="/admin">
+														<i class="icon settings"></i>
+														admin_panel<!-- Admin Panel -->
+													</a>
+												<div class="divider"></div>
+												<a class="item" href="/logout">
+													<i class="octicon octicon-sign-out"></i>
+													sign_out<!-- Sign Out -->
+												</a>
+											</div><!-- end content avatar menu -->
+										</div><!-- end dropdown avatar menu -->
+									</div><!-- end signed user right menu -->
+
+
+									<a class="item" target="_blank" href="https://gogs.io/docs" rel="noreferrer">help</a>
+                            {% if not user.is_active %}
+									<div class="right menu">
+											<a class="item" href="/user/sign_up">
+												<i class="octicon octicon-person"></i> register
+											</a>
+										<a class="item" href="/login">
+											<i class="octicon octicon-sign-in"></i> sign_in
+										</a>
+									</div><!-- end anonymous right menu -->
+                            {% endif %}
+							</div><!-- end top menu -->
+						</div><!-- end column -->
+					</div><!-- end grid -->
+				</div><!-- end container -->
+			</div><!-- end bar -->
+	</div>

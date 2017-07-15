@@ -1,0 +1,20 @@
+{% if ErrorMsg %}
+	<div class="ui negative message">
+		<p>{{ ErrorMsg }}</p>
+	</div>
+{% endif %}
+{% if WarningMsg %}
+	<div class="ui warning message">
+		<p>{{ WarningMsg }}</p>
+	</div>
+{% endif %}
+{% if SuccessMsg %}
+	<div class="ui positive message">
+		<p>{{ SuccessMsg }}</p>
+	</div>
+{% endif %}
+{% if InfoMsg %}
+	<div class="ui info message">
+		<p>{{ InfoMsg }}</p>
+	</div>
+{% endif %}
