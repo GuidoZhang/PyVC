@@ -214,3 +214,4 @@ ModelManifest.xml
 #Python
 *.pyc
 *.sqlite3
+*.html.py
