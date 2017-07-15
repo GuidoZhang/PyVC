@@ -47,6 +47,12 @@ urlpatterns = [
         {},
         name='modify_password'),
 
+    url(r'^profile/modify/password_post$',
+        views.modify_password_post,
+        {},
+        name='modify_password_post'
+        ),
+
     # Uncomment the admin/doc line below to enable admin documentation:
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

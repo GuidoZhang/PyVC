@@ -10,7 +10,7 @@
 				</h4>
 				<div class="ui attached segment">
 					<p>settings.profile_desc</p>
-					<form class="ui form" action="" method="post">
+					<form class="ui form" action="" method="post">{% csrf_token %}
 						<div class="required field">
 							<label for="username">username<span class="text red hide" id="name-change-prompt"> settings.change_username_prompt</span></label>
 							<input id="username" name="name" value="{{user.username}}" data-name="" autofocus required readonly>
@@ -18,7 +18,7 @@
 						</div>
 						<div class="field">
 							<label for="full_name">settings.full_name</label>
-							<input id="full_name" name="full_name" value="">
+							<input id="full_name" name="full_name" value="{{user.firstname}}">
 						</div>
 						<div class="required field">
 							<label for="email">email</label>
