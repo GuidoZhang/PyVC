@@ -20,6 +20,7 @@ def home(request):
         {
             'title':'Home Page',
             'year':datetime.now().year,
+            'PageName':'home',
         }
     )
 
@@ -29,6 +30,61 @@ def profile(request):
     return render(
         request,
         'app/user/profile.html',
+        {'PageName':'profile'},
+        )
+
+@login_required
+def dashboard(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/user/dashboard/dashboard.html',
+        {'PageName':'dashboard'},
+        )
+
+@login_required
+def issues(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/user/dashboard/issues.html',
+        {'PageName':'issues'},
+        )
+
+@login_required
+def pulls(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/user/dashboard/issues.html',
+        {'PageName':'pulls'},
+        )
+
+@login_required
+def explore(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/explore/repos.html',
+        {'PageName':'explore'},
+        )
+
+@login_required
+def explore_organization(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/explore/organizations.html',
+        {'PageName':'explore_organization'},
+        )
+
+@login_required
+def explore_users(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/explore/users.html',
+        {'PageName':'explore_users'},
         )
 
 @login_required
@@ -63,6 +119,15 @@ def modify_password_post(request):
         { "msg" : msg },
         )
 
+@login_required
+def modify_email_post(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/user/settings/email.html',
+        { },
+        )
+    
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)

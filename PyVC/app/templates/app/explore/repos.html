@@ -1,0 +1,14 @@
+﻿{% include "app/base/head.html" %}
+<div class="explore repositories">
+	<div class="ui container">
+		<div class="ui grid">
+			{% include "app/explore/navbar.html" %}
+			<div class="twelve wide column content">
+				{% include "app/explore/search.html" %}
+				{% include "app/explore/repo_list.html" %}
+				{% include "app/explore/page.html" %}
+			</div>
+		</div>
+	</div>
+</div>
+{% include "app/base/footer.html" %}

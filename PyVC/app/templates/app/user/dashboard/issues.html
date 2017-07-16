@@ -1,0 +1,88 @@
+﻿{% include "app/base/head.html" %}
+<div class="dashboard issues">
+	{% include "app/user/dashboard/navbar.html" %}
+	<div class="ui container">
+		<div class="ui grid">
+			<div class="four wide column">
+				<div class="ui secondary vertical filter menu">
+					<a class="ui basic blue button item" href="">
+                        属于该用户仓库的
+						<strong class="ui right"></strong>
+					</a>
+						<a class="ui basic blue button item" href="">
+                            指派给您的
+							<strong class="ui right"></strong>
+						</a>
+						<a class="ui basic blue button item" href="">
+                            由您创建的
+							<strong class="ui right"></strong>
+						</a>
+					<div class="ui divider"></div>
+						<a class="ui basic blue button repo name item" href="">
+							<span class="text truncate"></span>
+							<div class="floating ui red green  label">
+							</div>
+						</a>
+				</div>
+			</div>
+			<div class="twelve wide column content">
+				<div class="ui tiny basic status buttons">
+					<a class="ui green active basic button" href="">
+						<i class="octicon octicon-issue-opened"></i>
+						开启中
+					</a>
+					<a class="ui red active basic button" href="">
+						<i class="octicon octicon-issue-closed"></i>
+						已关闭
+					</a>
+				</div>
+				<div class="ui right floated secondary filter menu">
+					<!-- Sort -->
+					<div class="ui dropdown type jump item">
+						<span class="text">
+                            排序
+							<i class="dropdown icon"></i>
+						</span>
+						<div class="menu">
+							<a class="active item" href="">最新创建</a>
+							<a class="active item" href="">最早创建</a>
+							<a class="active item" href="">最近更新</a>
+							<a class="active item" href="">最少更新</a>
+							<a class="active item" href="">最多评论</a>
+							<a class="active item" href="">最少评论</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="issue list">
+						<li class="item">
+							<div class="ui label"></div>
+							<a class="title has-emoji" href=""></a>
+
+								<span class="comment ui right"><i class="octicon octicon-comment"></i> </span>
+
+							<p class="desc">
+                                由 <a href="%[2]s">%[3]s</a> 与 %[1]s创建
+									<a class="ui right assignee poping up" href="" data-content="" data-variation="inverted" data-position="left center">
+										<img class="ui avatar image" src="">
+									</a>
+							</p>
+						</li>
+							<div class="center page buttons">
+								<div class="ui borderless pagination menu">
+									<a class="disabled item" href="">
+										<i class="left arrow icon"></i> 上一页
+									</a>
+											<a class="disabled item">...</a>
+											<a class="active item" href=""></a>
+									<a class="disabled item" href="">
+										下一页 <i class="icon right arrow"></i>
+									</a>
+								</div>
+							</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% include "app/base/footer.html" %}

@@ -206,6 +206,7 @@
     <Folder Include="app\templates\app\" />
     <Folder Include="app\templates\app\base\" />
     <Folder Include="app\templates\app\user\" />
+    <Folder Include="app\templates\app\user\dashboard\" />
     <Folder Include="app\templates\app\user\settings\" />
     <Folder Include="PyVC\" />
   </ItemGroup>
@@ -1543,10 +1544,16 @@
     <Content Include="app\static\app\plugins\simplemde-1.10.1\simplemde.min.css" />
     <Content Include="app\static\app\plugins\simplemde-1.10.1\simplemde.min.js" />
     <Content Include="app\templates\app\base\alert.html" />
+    <Content Include="app\templates\app\base\delete_modal_actions.html" />
     <Content Include="app\templates\app\base\footer.html" />
     <Content Include="app\templates\app\base\head.html" />
     <Content Include="app\templates\app\home.html" />
+    <Content Include="app\templates\app\user\dashboard\dashboard.html" />
+    <Content Include="app\templates\app\user\dashboard\feeds.html" />
+    <Content Include="app\templates\app\user\dashboard\issues.tmpl" />
+    <Content Include="app\templates\app\user\dashboard\navbar.tmpl" />
     <Content Include="app\templates\app\user\profile.html" />
+    <Content Include="app\templates\app\user\settings\email.html" />
     <Content Include="app\templates\app\user\settings\navbar.html" />
     <Content Include="app\templates\app\user\settings\password.html" />
     <Content Include="requirements.txt" />

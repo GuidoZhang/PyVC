@@ -1,0 +1,29 @@
+﻿{% include "app/base/head.html" %}
+<div class="explore users">
+	<div class="ui container">
+		<div class="ui grid">
+			{% include "app/explore/navbar.html" %}
+			<div class="twelve wide column content">
+				{% include "app/explore/search.html" %}
+
+				<div class="ui user list">
+						<div class="item">
+						  <img class="ui avatar image" src="">
+						  <div class="content">
+						  	<span class="header"><a href="">Name</a> FullName</span>
+						    <div class="description">
+										<i class="octicon octicon-location"></i> Location
+										<i class="octicon octicon-mail"></i>
+										<a href="mailto:Email" rel="nofollow">Email</a>
+									<i class="octicon octicon-clock"></i> 加入于
+						    </div>
+						  </div>
+						</div>
+				</div>
+
+				{% include "app/explore/page.html" %}
+			</div>
+		</div>
+	</div>
+</div>
+{% include "app/base/footer.html" %}

@@ -1,0 +1,116 @@
+﻿{% include "app/base/head.html" %}
+<div class="dashboard feeds">
+	{% include "app/user/dashboard/navbar.html" %}
+	<div class="ui container">
+		<div class="ui grid">
+			<div class="ten wide column">
+				{% include "./feeds.html" %}
+			</div>
+			<div class="six wide column">
+				<div class="ui  three two  item tabable menu">
+					<a class="item active" data-tab="repos">仓库</a>
+					<a class="item" data-tab="orgs">组织</a>
+					<a class="item" data-tab="mirrors">镜像</a>
+				</div>
+				<div class="ui tab active list" data-tab="repos">
+					<div class="ui top attached header">
+						我的仓库 <span class="ui grey label">1</span>
+						<div class="ui right">
+							<a class="poping up" href="/repo/create?org=" data-content="创建新的仓库" data-variation="tiny inverted" data-position="left center">
+								<i class="plus icon"></i>
+								<span class="sr-only">创建新的仓库</span>
+							</a>
+						</div>
+					</div>
+					<div class="ui attached table segment">
+						<ul class="repo-owner-name-list">
+								<li class="private">
+									<a href="">
+										<i class="octicon octicon- repo-forked lock repo-clone repo "></i>
+										<strong class="text truncate item-name"></strong>
+										<span class="ui right text light grey">
+											<i class="octicon octicon-star rear"></i>
+										</span>
+									</a>
+								</li>
+							<li>
+								<a href="">展示更多的仓库</a>
+							</li>
+						</ul>
+					</div>
+
+						<!--<h4 class="ui top attached header">
+							.i18n.Tr "home.collaborative_repos"
+						</h4>
+						<div class="ui attached table segment">
+							<ul id="collaborative-repo-list">
+								range .CollaborativeRepos
+									<li if .IsPrivate class="private" end>
+										<a href="">
+											<i class="octicon octicon-[if .IsPrivate]lock[else if .IsFork]repo-forked[else if .IsMirror]repo-clone[else]repo[end]"></i>
+											<span class="text truncate owner-and-repo">
+												<span class="text truncate owner-name">[.Owner.Name]</span> / <strong></strong>
+											</span>
+											<span class="ui right text light grey">
+												 <i class="octicon octicon-star rear"></i>
+											</span>
+										</a>
+									</li>
+							</ul>
+						</div>-->
+				</div>
+
+					<div class="ui tab list" data-tab="orgs">
+						<div class="ui top attached header">
+							我的组织 <span class="ui grey label"></span>
+							<div class="ui right">
+								<a class="poping up" href="/org/create" data-content="创建新的组织" data-variation="tiny inverted" data-position="left center">
+									<i class="plus icon"></i>
+									<span class="sr-only">创建新的组织</span>
+								</a>
+							</div>
+						</div>
+						<div class="ui attached table segment">
+							<ul class="repo-owner-name-list">
+									<li>
+										<a href="">
+											<i class="octicon octicon-organization"></i>
+											<strong class="text truncate item-name"></strong>
+											<span class="ui right text light grey">
+												 <i class="octicon octicon-repo rear"></i>
+											</span>
+										</a>
+									</li>
+							</ul>
+						</div>
+					</div>
+
+				<div class="ui tab list" data-tab="mirrors">
+					<div class="ui top attached header">
+						我的镜像 <span class="ui grey label">0</span>
+						<div class="ui right">
+							<a class="poping up" href="/repo/migrate?mirror=1" data-content="创建新的镜像" data-variation="tiny inverted" data-position="left center">
+								<i class="plus icon"></i>
+								<span class="sr-only">创建新的镜像</span>
+							</a>
+						</div>
+					</div>
+					<div class="ui attached table segment">
+						<ul class="repo-owner-name-list">
+								<li class="private">
+									<a href="">
+										<i class="octicon octicon-repo-clone"></i>
+										<strong class="text truncate item-name"></strong>
+										<span class="ui right text light grey">
+											H <i class="octicon octicon-sync rear"></i>
+										</span>
+									</a>
+								</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% include "app/base/footer.html" %}

@@ -1,0 +1,14 @@
+<div class="four wide column">
+	<div class="ui vertical menu navbar">
+		<div class="header item">探索</div>
+		<a class="{% ifequal PageName 'explore' %}active{% endifequal %} item" href="/explore">
+			<span class="octicon octicon-repo"></span> 仓库
+		</a>
+		<a class="{% ifequal PageName 'explore_users' %}active{% endifequal %} item" href="/explore/users">
+			<span class="octicon octicon-person"></span> 用户
+		</a>
+		<a class="{% ifequal PageName 'explore_organization' %}active{% endifequal %} item" href="/explore/organization">
+			<span class="octicon octicon-organization"></span> 组织
+		</a>
+	</div>
+</div>

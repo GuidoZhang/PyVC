@@ -42,6 +42,36 @@ urlpatterns = [
         {},
         name='profile'),
 
+    url(r'^dashboard$',
+        views.dashboard,
+        {},
+        name='dashboard'),
+
+    url(r'^issues$',
+        views.issues,
+        {},
+        name='issues'),
+
+    url(r'^explore$',
+        views.explore,
+        {},
+        name='explore'),
+
+    url(r'^explore/organization$',
+        views.explore_organization,
+        {},
+        name='explore_organization'),
+
+    url(r'^explore/users$',
+        views.explore_users,
+        {},
+        name='explore_users'),
+
+    url(r'^pulls',
+        views.pulls,
+        {},
+        name='pulls'),
+
     url(r'^profile/modify/password$',
         views.modify_password,
         {},
@@ -51,6 +81,12 @@ urlpatterns = [
         views.modify_password_post,
         {},
         name='modify_password_post'
+        ),
+
+    url(r'^profile/modify/email$',
+        views.modify_email_post,
+        {},
+        name='modify_email_post'
         ),
 
     # Uncomment the admin/doc line below to enable admin documentation:

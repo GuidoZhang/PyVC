@@ -1,0 +1,50 @@
+<div class="ui container">
+	<div class="ui floating dropdown link jump">
+		<span class="text">
+			<img class="ui avatar image" src="">
+			{{user.username}} 
+			<i class="dropdown icon"></i>
+		</span>
+		<div class="context user overflow menu" tabindex="-1">
+			<div class="ui header">
+        切换控制面板用户
+      </div>
+			<div class="items">
+				<a class="active selected item" href="">
+					<img class="ui avatar image" src="LoggedUser.RelAvatarLink">
+					{{user.username}} 
+				</a>
+					<a class="active selected item" href="">
+						<img class="ui avatar image" src="">
+					</a>
+			</div>
+			<a class="item" href="">
+				<i class="octicon octicon-plus"></i>&nbsp;&nbsp;&nbsp;new_org
+			</a>
+		</div>
+	</div>
+
+
+		<div class="ui right">
+			<div class="ui secondary head menu">
+				<a class="active item" href="">
+					<i class="octicon octicon-rss"></i>&nbsp;activities
+				</a>
+				<a class="active item" href="">
+					<i class="octicon octicon-issue-opened"></i>&nbsp;issues
+				</a>
+				<a class="activeitem" href="">
+					<i class="octicon octicon-git-pull-request"></i>&nbsp;pull_requests
+				</a>
+				<div class="right menu">
+					<div class="item">
+						<a class="ui blue basic button" href="">
+							home.view_home
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	{{end}}
+</div>
+<div class="ui divider"></div>
