@@ -205,6 +205,7 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="app\templates\app\base\" />
+    <Folder Include="app\templates\app\explore\" />
     <Folder Include="app\templates\app\user\" />
     <Folder Include="app\templates\app\user\dashboard\" />
     <Folder Include="app\templates\app\user\settings\" />
@@ -1547,6 +1548,13 @@
     <Content Include="app\templates\app\base\delete_modal_actions.html" />
     <Content Include="app\templates\app\base\footer.html" />
     <Content Include="app\templates\app\base\head.html" />
+    <Content Include="app\templates\app\explore\navbar.html" />
+    <Content Include="app\templates\app\explore\organizations.html" />
+    <Content Include="app\templates\app\explore\page.html" />
+    <Content Include="app\templates\app\explore\repos.html" />
+    <Content Include="app\templates\app\explore\repo_list.html" />
+    <Content Include="app\templates\app\explore\search.html" />
+    <Content Include="app\templates\app\explore\users.html" />
     <Content Include="app\templates\app\home.html" />
     <Content Include="app\templates\app\user\dashboard\dashboard.html" />
     <Content Include="app\templates\app\user\dashboard\feeds.html" />
